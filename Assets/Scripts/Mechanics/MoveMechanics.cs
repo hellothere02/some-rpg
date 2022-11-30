@@ -5,13 +5,10 @@ namespace Lessons.Architecture.Mechanics
     public class MoveMechanics : MonoBehaviour
     {
         [SerializeField]
-        private Vec3EventReceiver moveReceiver;
+        private Vector3EventReceiver moveReceiver;        
 
         [SerializeField]
-        private Vec3Behaviour vec3Points;
-
-        [SerializeField]
-        private GameObject playerVisual;
+        private Transform targetOdject;
 
         private void OnEnable()
         {
@@ -23,9 +20,9 @@ namespace Lessons.Architecture.Mechanics
             moveReceiver.OnEvent -= Move;
         }
 
-        private void Move()
+        private void Move(Vector3 moveVector)
         {
-            playerVisual.transform.position = vec3Points.Value;
+            targetOdject.position += moveVector;
         }
     }
 }

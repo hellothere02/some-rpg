@@ -7,13 +7,13 @@ namespace Lessons.Architecture.Mechanics
     public class JumpMechanics : MonoBehaviour
     {
         [SerializeField]
-        private Vec3EventReceiver jumpReceiver;
+        private EventReceiver jumpReceiver;
 
         [SerializeField]
-        private Vec3Behaviour jumpDirection;
+        private Vector3Behaviour jumpDirection;
 
         [SerializeField]
-        private GameObject playerVisual;
+        private Rigidbody targetRb;
 
         private void OnEnable()
         {
@@ -27,7 +27,7 @@ namespace Lessons.Architecture.Mechanics
 
         private void Jump()
         {
-            playerVisual.GetComponent<Rigidbody>().AddForce(new Vector3(0, jumpDirection.Value.y,0), ForceMode.Impulse);
+            targetRb.AddForce(new Vector3(0, jumpDirection.Value.y,0), ForceMode.Impulse);
         }
     }
 }

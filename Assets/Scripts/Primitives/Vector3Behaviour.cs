@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Lessons.Architecture.Mechanics
 {
-    class Vec3Behaviour : MonoBehaviour
+    public class Vector3Behaviour : MonoBehaviour
     {
         [SerializeField]
         private Vector3 value;
