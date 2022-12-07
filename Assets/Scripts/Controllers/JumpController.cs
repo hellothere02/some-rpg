@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Lessons.Architecture.Mechanics
-{
     public class JumpController : MonoBehaviour
     {
         [SerializeField]
@@ -29,4 +27,3 @@ namespace Lessons.Architecture.Mechanics
             jumpComponent.Jump();
         }
     }
-}

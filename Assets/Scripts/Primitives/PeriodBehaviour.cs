@@ -2,8 +2,6 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-namespace Lessons.Architecture.Mechanics
-{
     public sealed class PeriodBehaviour : MonoBehaviour
     {
         public event Action OnEvent;
@@ -45,4 +43,3 @@ namespace Lessons.Architecture.Mechanics
             }
         }
     }
-}

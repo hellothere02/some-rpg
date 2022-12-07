@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Lessons.Architecture.Mechanics
-{
     public class JumpMechanics : MonoBehaviour
     {
         [SerializeField]
@@ -30,4 +28,3 @@ namespace Lessons.Architecture.Mechanics
             targetRb.AddForce(new Vector3(0, jumpDirection.Value.y,0), ForceMode.Impulse);
         }
     }
-}

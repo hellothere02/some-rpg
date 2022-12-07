@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Lessons.Architecture.Mechanics
-{
+
     public class ShootController : MonoBehaviour
     {
         [SerializeField]
@@ -29,4 +28,3 @@ namespace Lessons.Architecture.Mechanics
             shootComponent.Shoot();
         }
     }
-}

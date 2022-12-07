@@ -1,7 +1,5 @@
 using UnityEngine;
 
-namespace Lessons.Architecture.Mechanics
-{
     public sealed class MoveComponent : MonoBehaviour, IMoveComponent
     {
         [SerializeField]
@@ -12,4 +10,3 @@ namespace Lessons.Architecture.Mechanics
             this.moveReceiver.Call(vector);
         }
     }
-}

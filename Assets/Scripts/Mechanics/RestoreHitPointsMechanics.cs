@@ -1,7 +1,5 @@
 using UnityEngine;
 
-namespace Lessons.Architecture.Mechanics
-{
     public sealed class RestoreHitPointsMechanics : MonoBehaviour
     {
         [SerializeField]
@@ -56,4 +54,3 @@ namespace Lessons.Architecture.Mechanics
             }
         }
     }
-}

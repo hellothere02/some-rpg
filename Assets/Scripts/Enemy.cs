@@ -1,7 +1,5 @@
 using UnityEngine;
 
-namespace Lessons.Architecture.Mechanics
-{
     public sealed class Enemy : MonoBehaviour
     {
         [SerializeField]
@@ -12,4 +10,3 @@ namespace Lessons.Architecture.Mechanics
             this.takeDamageReceiver.Call(damage);
         }
     }
-}

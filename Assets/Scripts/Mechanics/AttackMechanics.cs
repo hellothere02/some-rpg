@@ -1,7 +1,5 @@
 using UnityEngine;
 
-namespace Lessons.Architecture.Mechanics
-{
     public sealed class AttackMechanics : MonoBehaviour
     {
         [SerializeField]
@@ -43,4 +41,3 @@ namespace Lessons.Architecture.Mechanics
             this.countdown.Play();
         }
     }
-}

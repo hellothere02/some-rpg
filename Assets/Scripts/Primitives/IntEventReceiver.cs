@@ -2,8 +2,6 @@ using System;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace Lessons.Architecture.Mechanics
-{
     public sealed class IntEventReceiver : MonoBehaviour
     {
         public event Action<int> OnEvent;
@@ -14,4 +12,3 @@ namespace Lessons.Architecture.Mechanics
             this.OnEvent?.Invoke(value);
         }
     }
-}

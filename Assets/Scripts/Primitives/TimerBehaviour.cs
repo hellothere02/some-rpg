@@ -3,8 +3,6 @@ using System.Collections;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace Lessons.Architecture.Mechanics
-{
     public sealed class TimerBehaviour : MonoBehaviour
     {
         public event Action OnEnded;
@@ -58,4 +56,3 @@ namespace Lessons.Architecture.Mechanics
             this.OnEnded?.Invoke();
         }
     }
-}

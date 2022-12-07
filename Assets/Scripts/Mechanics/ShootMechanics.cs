@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Lessons.Architecture.Mechanics
-{
     public class ShootMechanics : MonoBehaviour
     {
         [SerializeField]
@@ -28,4 +26,3 @@ namespace Lessons.Architecture.Mechanics
             Instantiate(bulletPref, gunTransform.position, Quaternion.identity);
         }
     }
-}

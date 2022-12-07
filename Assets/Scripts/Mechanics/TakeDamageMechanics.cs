@@ -1,7 +1,5 @@
 using UnityEngine;
 
-namespace Lessons.Architecture.Mechanics
-{
     public sealed class TakeDamageMechanics : MonoBehaviour
     {
         [SerializeField]
@@ -25,4 +23,3 @@ namespace Lessons.Architecture.Mechanics
             this.hitPoints.Value -= damage;
         }
     }
-}

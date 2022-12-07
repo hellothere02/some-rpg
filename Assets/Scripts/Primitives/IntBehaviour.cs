@@ -1,8 +1,6 @@
 using System;
 using UnityEngine;
 
-namespace Lessons.Architecture.Mechanics
-{
     public sealed class IntBehaviour : MonoBehaviour
     {
         public event Action<int> OnValueChanged;
@@ -20,4 +18,3 @@ namespace Lessons.Architecture.Mechanics
         [SerializeField]
         private int value;
     }
-}

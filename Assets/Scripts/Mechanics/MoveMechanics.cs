@@ -1,7 +1,5 @@
 using UnityEngine;
 
-namespace Lessons.Architecture.Mechanics
-{
     public class MoveMechanics : MonoBehaviour
     {
         [SerializeField]
@@ -25,4 +23,3 @@ namespace Lessons.Architecture.Mechanics
             targetOdject.position += moveVector;
         }
     }
-}

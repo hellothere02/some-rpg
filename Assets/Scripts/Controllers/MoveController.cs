@@ -1,7 +1,6 @@
 using UnityEngine;
 
-namespace Lessons.Architecture.Mechanics
-{
+
     public class MoveController : AbstractMoveController
     {
         [SerializeField]
@@ -21,4 +20,3 @@ namespace Lessons.Architecture.Mechanics
             this.moveComponent.Move(velocity);
         }
     }
-}

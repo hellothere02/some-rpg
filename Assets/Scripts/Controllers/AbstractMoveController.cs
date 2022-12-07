@@ -1,7 +1,5 @@
 using UnityEngine;
 
-namespace Lessons.Architecture.Mechanics
-{
     public abstract class AbstractMoveController : MonoBehaviour
     {
         private void Update()
@@ -31,4 +29,3 @@ namespace Lessons.Architecture.Mechanics
 
         protected abstract void Move(Vector3 direction);
     }
-}
