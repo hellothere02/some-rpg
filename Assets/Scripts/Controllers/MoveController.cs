@@ -1,22 +1,37 @@
 using UnityEngine;
 
 
-    public class MoveController : AbstractMoveController
+public class MoveController : MonoBehaviour, IConstructListener,
+    IStartGameListener,
+    IFinishGameListener
+{
+    //[SerializeField]
+    //private Entity unit;
+    //[SerializeField]
+    private KeyboardInput input;
+
+    private IMoveComponent moveComponent;
+
+    void IConstructListener.Construct(GameContext context)
     {
-        [SerializeField]
-        private Entity unit;
-
-        private IMoveComponent moveComponent;
-
-        private void Awake()
-        {
-            this.moveComponent = this.unit.Get<IMoveComponent>();
-        }
-
-        protected override void Move(Vector3 direction)
-        {
-            const float speed = 5.0f;
-            var velocity = direction * (speed * Time.deltaTime);
-            this.moveComponent.Move(velocity);
-        }
+        input = context.GetService<KeyboardInput>();
+        moveComponent = context.GetService<CharacterService>().GetCharacter().Get<IMoveComponent>();
     }
+
+    void IStartGameListener.OnStartGame()
+    {
+        this.input.OnMove += Move;
+    }
+
+    void IFinishGameListener.OnFinishGame()
+    {
+        this.input.OnMove -= Move;
+    }
+
+    private void Move(Vector3 direction)
+    {
+        const float speed = 5.0f;
+        var velocity = direction * (speed * Time.deltaTime);
+        this.moveComponent.Move(velocity);
+    }
+}
