@@ -7,7 +7,7 @@ public class FallController : MonoBehaviour, IConstructListener,
     IFinishGameListener
 {
     private CharacterService characterService;
-    private Transform playerTransform;
+    private IPositionCompinent positionCompinent;
     private GameContext gameContext;
 
     private void Awake()
@@ -23,7 +23,7 @@ public class FallController : MonoBehaviour, IConstructListener,
 
     void IStartGameListener.OnStartGame()
     {
-        playerTransform = characterService.GetCharacterTransform();
+        positionCompinent = characterService.GetCharacter().Get<IPositionCompinent>();
         enabled = true;
     }
 
@@ -34,7 +34,7 @@ public class FallController : MonoBehaviour, IConstructListener,
 
     private void Update()
     {
-        if(playerTransform.position.y < -5)
+        if(positionCompinent.GetPosition().y < -5)
         {
             gameContext.FinishGame();
         }

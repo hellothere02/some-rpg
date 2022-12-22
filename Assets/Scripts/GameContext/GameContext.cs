@@ -60,13 +60,6 @@ public sealed class GameContext : MonoBehaviour
     }
 
     [Button]
-    public void StartGameWithDelay()
-    {
-        GetService<TimerService>().GetTimer().OnEnded += StartGame;
-        GetService<TimerService>().GetTimer().Play();
-    }
-
-    [Button]
     public void StartGame()
     {
         foreach (var listener in this.listeners)

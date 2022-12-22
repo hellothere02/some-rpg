@@ -5,9 +5,6 @@ public class MoveController : MonoBehaviour, IConstructListener,
     IStartGameListener,
     IFinishGameListener
 {
-    //[SerializeField]
-    //private Entity unit;
-    //[SerializeField]
     private KeyboardInput input;
 
     private IMoveComponent moveComponent;

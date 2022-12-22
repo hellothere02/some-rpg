@@ -7,6 +7,8 @@ public sealed class KeyboardInput : MonoBehaviour,
     IFinishGameListener
 {
     public event Action<Vector3> OnMove;
+    public event Action OnShoot;
+    public event Action OnJump;
 
     private void Awake()
     {
@@ -45,6 +47,16 @@ public sealed class KeyboardInput : MonoBehaviour,
         else if (Input.GetKey(KeyCode.RightArrow))
         {
             this.Move(Vector3.right);
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            OnShoot?.Invoke();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            OnJump?.Invoke();
         }
     }
 

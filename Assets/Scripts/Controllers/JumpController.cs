@@ -2,28 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-    public class JumpController : MonoBehaviour
+public class JumpController : MonoBehaviour, IConstructListener,
+IStartGameListener,
+IFinishGameListener
+{
+    private KeyboardInput input;
+    private IJumpComponent jumpComponent;
+
+    void IConstructListener.Construct(GameContext context)
     {
-        [SerializeField]
-        private Entity unit;
-
-        private IJumpComponent jumpComponent;
-
-        private void Awake()
-        {
-            jumpComponent = unit.Get<IJumpComponent>();
-        }
-
-        private void Update()
-        {
-            if(Input.GetKeyDown(KeyCode.Space))
-            {
-                Jump();
-            }
-        }
-
-        private void Jump()
-        {
-            jumpComponent.Jump();
-        }
+        input = context.GetService<KeyboardInput>();
+        jumpComponent = context.GetService<CharacterService>().GetCharacter().Get<IJumpComponent>();
     }
+
+    void IStartGameListener.OnStartGame()
+    {
+        this.input.OnJump += Jump;
+    }
+
+    void IFinishGameListener.OnFinishGame()
+    {
+        this.input.OnJump -= Jump;
+    }
+
+    private void Jump()
+    {
+        jumpComponent.Jump();
+    }
+}
